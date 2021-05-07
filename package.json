@@ -1,0 +1,45 @@
+{
+  "name": "ReadIt",
+  "version": "1.0.0",
+  "description": "Master Electron Project Code",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "watch": "nodemon --exec electron .",
+    "reset": "git reset --hard",
+    "build": "electron-builder -w",
+    "win-cert": "electron-builder create-self-signed-cert -p ashashin"
+  },
+  "repository": "https://github.com/vishal-vardhan/ReadIt",
+  "keywords": [
+    "Electron",
+    "Read It",
+    "ReadIt"
+  ],
+  "author": "Ashashin",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "^9.0.0",
+    "electron-builder": "^22.11.1",
+    "nodemon": "^2.0.0"
+  },
+  "dependencies": {
+    "electron-window-state": "^5.0.3"
+  },
+  "build": {
+    "appId": "com.ashashin.readIt",
+    "copyright": "Copyright 2021 Ashashin",
+    "win": {
+      "certificateFile": "private/ashashin.pfx",
+      "icon": "build/icon.ico",
+      "publisherName": "ashashin"
+    },
+    "linux": {
+      "category": "Utility"
+    },
+    "mac": {
+      "target": "dmg",
+      "category": "public.app-category.productivity"
+    }
+  }
+}
