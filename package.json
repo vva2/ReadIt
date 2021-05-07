@@ -8,7 +8,8 @@
     "watch": "nodemon --exec electron .",
     "reset": "git reset --hard",
     "build": "electron-builder -w",
-    "win-cert": "electron-builder create-self-signed-cert -p ashashin"
+    "win-cert": "electron-builder create-self-signed-cert -p ashashin",
+    "release": "electron-builder -w -p 'onTagOrDraft'" 
   },
   "repository": "https://github.com/vishal-vardhan/ReadIt",
   "keywords": [
@@ -27,6 +28,9 @@
     "electron-window-state": "^5.0.3"
   },
   "build": {
+    "publish": {
+      "provider": "github"
+    },
     "appId": "com.ashashin.readIt",
     "copyright": "Copyright 2021 Ashashin",
     "win": {
