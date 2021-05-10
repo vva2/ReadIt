@@ -7,11 +7,12 @@
     "start": "electron .",
     "watch": "nodemon --exec electron .",
     "reset": "git reset --hard",
-    "build": "electron-builder -w",
-    "win-cert": "electron-builder create-self-signed-cert -p ashashin",
-    "release": "electron-builder -w -p 'onTagOrDraft'" 
+    "build": "electron-builder -l",
+    "release": "electron-builder -l -p 'onTagOrDraft'"
   },
   "repository": "https://github.com/vishal-vardhan/ReadIt",
+  "homepage": "https://github.com/vishal-vardhan/ReadIt",
+  "licenses": ["MIT"],
   "keywords": [
     "Electron",
     "Read It",
@@ -20,7 +21,7 @@
   "author": "Ashashin",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "^9.0.0",
+    "electron": "^9.4.4",
     "electron-builder": "^22.11.1",
     "nodemon": "^2.0.0"
   },
@@ -32,14 +33,16 @@
       "provider": "github"
     },
     "appId": "com.ashashin.readIt",
-    "copyright": "Copyright 2021 Ashashin",
+    "productName": "ReadIt-App",
+    "copyright": "Copyright © 2021 ${author}",
     "win": {
       "certificateFile": "private/ashashin.pfx",
       "icon": "build/icon.ico",
       "publisherName": "ashashin"
     },
     "linux": {
-      "category": "Utility"
+      "category": "Utility",
+      "icon": "./build/icons/256x256.png"
     },
     "mac": {
       "target": "dmg",
